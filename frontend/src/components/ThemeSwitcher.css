@@ -1,0 +1,113 @@
+.theme-switcher {
+  position: relative;
+}
+
+.theme-switcher__trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  width: 100%;
+  text-align: left;
+}
+
+.theme-switcher__trigger:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.theme-switcher__trigger svg {
+  color: var(--accent-primary);
+}
+
+/* Dropdown */
+.theme-switcher__dropdown {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 220px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color-hover);
+  border-radius: var(--radius-md);
+  padding: 8px;
+  box-shadow: var(--shadow-lg);
+  z-index: 100;
+  animation: fadeIn 0.2s ease;
+}
+
+.theme-switcher.login-position .theme-switcher__dropdown {
+  bottom: auto;
+  top: 100%;
+  left: auto;
+  right: 0;
+}
+
+.theme-switcher__title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  padding: 6px 10px 8px;
+}
+
+.theme-switcher__option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.theme-switcher__option:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+}
+
+.theme-switcher__option.active {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+}
+
+.theme-switcher__preview {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.theme-switcher__icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.theme-switcher__name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.theme-switcher__check {
+  font-size: 12px;
+  color: var(--accent-primary);
+  font-weight: 700;
+}

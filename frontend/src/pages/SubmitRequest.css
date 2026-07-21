@@ -1,0 +1,17 @@
+.submit-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.submit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-submit {
+  align-self: flex-end;
+  min-width: 160px;
+  padding: 12px 28px;
+  font-size: 14px;
+  margin-top: 8px;
+}

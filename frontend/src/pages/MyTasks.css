@@ -1,0 +1,10 @@
+.stats-grid--compact {
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .stats-grid--compact {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

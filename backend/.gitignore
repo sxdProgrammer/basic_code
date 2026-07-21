@@ -1,0 +1,9 @@
+# Ignore local environment config
+.env
+
+# Ignore Composer dependencies
+/vendor/
+
+# Ignore user uploads
+/uploads/*
+!/uploads/.gitkeep
