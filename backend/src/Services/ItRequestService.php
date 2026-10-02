@@ -47,8 +47,10 @@ class ItRequestService {
      * Handle file uploads securely
      */
     private function handleFileUploads(int $requestId, array $files): array {
-        $maxSize = intval(getenv('MAX_FILE_SIZE') ?: 10485760);
-        $maxFiles = intval(getenv('MAX_FILES_PER_REQUEST') ?: 5);
+        // ⚠️ ต้องอ่าน $_ENV ก่อน getenv() — บน Apache/Windows getenv() คืนค่าว่างกลางคำขอได้
+        //    (คำขออื่นจบแล้ว PHP ล้าง environment ของ process ทิ้ง) ดูสรุปงาน 28 ส.ค. 2569
+        $maxSize = intval(($_ENV['MAX_FILE_SIZE'] ?? getenv('MAX_FILE_SIZE')) ?: 10485760);
+        $maxFiles = intval(($_ENV['MAX_FILES_PER_REQUEST'] ?? getenv('MAX_FILES_PER_REQUEST')) ?: 5);
         $forbidden = ['exe', 'bat', 'sh', 'cmd', 'com', 'vbs', 'js', 'msi'];
 
         $uploadDir = __DIR__ . '/../../uploads/it_requests/' . $requestId;
